@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "885236324406",
+    "project_id": "auxilioprofessor-fce60",
+    "storage_bucket": "auxilioprofessor-fce60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885236324406:android:c91b3a4afc78f6f8e5e097",
+        "android_client_info": {
+          "package_name": "br.com.lucas.auxilioprofessor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDK1TuhCfjd53lI2J4v7M0BEj6dJ4ghpg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
