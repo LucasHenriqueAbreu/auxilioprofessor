@@ -6,9 +6,11 @@ import 'package:auxilioprofessor/domain/entities/user_entity.dart';
 import 'package:auxilioprofessor/domain/repositories/user_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:mockito/annotations.dart';
+import 'get_logged_in_user_usecase_test.mocks.dart';
 
-class MockUserRepository extends Mock implements UserRepository {}
 
+@GenerateMocks([UserRepository])
 void main() {
   group('GetLoggedInUserUsecase', () {
     late GetLoggedInUserUsecase usecase;
