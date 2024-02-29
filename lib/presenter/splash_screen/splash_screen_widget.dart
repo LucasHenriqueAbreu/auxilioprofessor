@@ -54,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        // CircleAvatar( // Quando eu descobrir como testa 
+        // CircleAvatar( // Quando eu descobrir como testa
         //   radius: 50,
         //   backgroundImage: NetworkImage(user.photoURL),
         // ),

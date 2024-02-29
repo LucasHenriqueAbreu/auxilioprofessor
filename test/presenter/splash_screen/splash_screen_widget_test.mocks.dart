@@ -65,18 +65,16 @@ class MockGetLoggedInUserUsecase extends _i1.Mock
       ) as _i2.UserRepository);
 
   @override
-  _i5.Future<_i3.User> execute({dynamic input}) => (super.noSuchMethod(
+  _i5.Future<_i3.User> execute() => (super.noSuchMethod(
         Invocation.method(
           #execute,
           [],
-          {#input: input},
         ),
         returnValue: _i5.Future<_i3.User>.value(_FakeUser_1(
           this,
           Invocation.method(
             #execute,
             [],
-            {#input: input},
           ),
         )),
       ) as _i5.Future<_i3.User>);

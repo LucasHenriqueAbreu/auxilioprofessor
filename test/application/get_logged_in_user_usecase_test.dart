@@ -1,7 +1,7 @@
 // get_logged_in_user_usecase_test.dart
 
 import 'package:auxilioprofessor/application/get_logged_in_user_usecase.dart';
-import 'package:auxilioprofessor/base/errors/user_not_found_exception.dart';
+import 'package:auxilioprofessor/core/base/errors/user_not_found_exception.dart';
 import 'package:auxilioprofessor/domain/entities/user_entity.dart';
 import 'package:auxilioprofessor/domain/repositories/user_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
