@@ -3,7 +3,7 @@ import 'package:auxilioprofessor/domain/entities/localization_entity.dart';
 
 class Point {
   final int id;
-  final int userId;
+  final String userId;
   final DateTime time;
   final Localization localization;
 

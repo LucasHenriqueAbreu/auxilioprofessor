@@ -5,7 +5,7 @@ import 'package:auxilioprofessor/domain/entities/point.dart';
 import 'package:auxilioprofessor/domain/repositories/point_repository.dart';
 
 class SaveNewPointInput {
-  final int userId;
+  final String userId;
   final Localization localization;
 
   SaveNewPointInput({required this.userId, required this.localization});

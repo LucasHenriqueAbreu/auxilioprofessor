@@ -1,4 +1,4 @@
-import 'package:auxilioprofessor/application/get_logged_in_user_usecase.dart';
+import 'package:auxilioprofessor/application/user/get_logged_in_user_usecase.dart';
 import 'package:auxilioprofessor/infra/repositories/user_repository_memory.dart';
 import 'package:auxilioprofessor/presenter/home/home_screen_widget.dart';
 import 'package:auxilioprofessor/presenter/login/login_screen_widget.dart';

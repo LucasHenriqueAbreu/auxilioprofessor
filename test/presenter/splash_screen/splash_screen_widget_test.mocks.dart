@@ -5,7 +5,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i5;
 
-import 'package:auxilioprofessor/application/get_logged_in_user_usecase.dart'
+import 'package:auxilioprofessor/application/user/get_logged_in_user_usecase.dart'
     as _i4;
 import 'package:auxilioprofessor/domain/entities/user_entity.dart' as _i3;
 import 'package:auxilioprofessor/domain/repositories/user_repository.dart'

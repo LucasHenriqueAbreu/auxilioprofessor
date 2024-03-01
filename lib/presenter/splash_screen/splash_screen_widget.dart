@@ -1,4 +1,4 @@
-import 'package:auxilioprofessor/application/get_logged_in_user_usecase.dart';
+import 'package:auxilioprofessor/application/user/get_logged_in_user_usecase.dart';
 import 'package:auxilioprofessor/domain/entities/user_entity.dart';
 import 'package:auxilioprofessor/presenter/splash_screen/splash_screen_controller.dart';
 import 'package:flutter/material.dart';

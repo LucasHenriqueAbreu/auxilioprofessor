@@ -3,6 +3,9 @@ description: "Projeto para registro ponto e outras funcionalidades que eu ainda 
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
+scripts:
+  build_runner: dart run build_runner build
+
 environment:
   sdk: ">=3.2.6 <4.0.0"
 
@@ -12,6 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_core: ^2.25.5
   firebase_auth: ^4.17.6
+  geolocator: ^11.0.0
 
 dev_dependencies:
   flutter_test:
