@@ -1,12 +1,10 @@
-import 'package:auxilioprofessor/application/user/get_logged_in_user_usecase.dart';
-import 'package:auxilioprofessor/application/point/save_new_point_usecase.dart';
 import 'package:auxilioprofessor/presenter/register/new_point_registration_controller.dart';
 import 'package:flutter/material.dart';
 
 class NewPointRegistrationScreen extends StatelessWidget {
   final NewPointRegistrationController controller;
 
-  const NewPointRegistrationScreen({required this.controller});
+  const NewPointRegistrationScreen({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {

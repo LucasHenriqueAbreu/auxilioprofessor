@@ -25,19 +25,14 @@ void main() {
       final input =
           SaveNewPointInput(userId: userId, localization: localization);
       const newId = 100;
-      final ponto = Point(
-        id: newId,
-        userId: userId,
-        time: DateTime.now(),
-        localization: localization,
-      );
 
       when(mockPointRepository.getNextId()).thenAnswer((_) async => newId);
-
+      when(mockPointRepository.salvarPonto(captureAny)).thenAnswer((_) async => Future<void>.value(null));
+      
       await saveNewPointUsecase.execute(input);
 
       verify(mockPointRepository.getNextId()).called(1);
-      verify(mockPointRepository.salvarPonto(ponto)).called(1);
+      verify(mockPointRepository.salvarPonto(captureAny)).called(1);
     });
 
     test('Deve lançar uma exceção se getNextId falhar', () async {

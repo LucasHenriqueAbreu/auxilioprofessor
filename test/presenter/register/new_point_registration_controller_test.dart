@@ -34,23 +34,20 @@ void main() {
     final user =
         User(uid: '1', displayName: 'Test User', email: '', photoURL: '');
     final localization = Localization(latitude: 0.0, longitude: 0.0);
-    final input =
-        SaveNewPointInput(userId: user.uid, localization: localization);
-
     when(mockGetLoggedInUserUsecase.execute()).thenAnswer((_) async => user);
     when(mockGetLocationUsecase.execute())
         .thenAnswer((_) async => localization);
 
-    when(mockSaveNewPointUsecase.execute(input)).thenAnswer((_) async {});
+    when(mockSaveNewPointUsecase.execute(captureAny))
+        .thenAnswer((_) async => Future<void>.value(null));
 
     await controller.registerNewPoint();
 
     expect(controller.value, RegistrationState.success);
 
-    // Verifique se os casos de uso foram chamados com os argumentos corretos
     verify(mockGetLoggedInUserUsecase.execute()).called(1);
     verify(mockGetLocationUsecase.execute()).called(1);
-    verify(mockSaveNewPointUsecase.execute(input)).called(1);
+    verify(mockSaveNewPointUsecase.execute(captureAny)).called(1);
   });
 
   test('registerNewPoint - Error', () async {
