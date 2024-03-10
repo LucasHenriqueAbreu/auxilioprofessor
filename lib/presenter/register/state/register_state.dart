@@ -1,5 +1,6 @@
 abstract class NewPointState {}
 
+class NewPointStartState extends NewPointState {}
 class NewPointSuccessState extends NewPointState {}
 class NewPointLoadingState extends NewPointState {}
 class NewPointErrorState extends NewPointState {

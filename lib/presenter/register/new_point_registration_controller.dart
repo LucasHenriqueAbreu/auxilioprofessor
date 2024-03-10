@@ -10,7 +10,7 @@ class NewPointRegistrationController {
   final GetLocationUsecase getLocationUsecase;
 
   final ValueNotifier<NewPointState> _stateNotifier =
-      ValueNotifier(NewPointLoadingState());
+      ValueNotifier(NewPointStartState());
 
   NewPointRegistrationController({
     required this.saveNewPointUseCase,

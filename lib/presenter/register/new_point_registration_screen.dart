@@ -2,6 +2,7 @@ import 'package:auxilioprofessor/core/base/errors/user_not_found_exception.dart'
 import 'package:auxilioprofessor/presenter/register/new_point_registration_controller.dart';
 import 'package:auxilioprofessor/presenter/register/state/register_state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class NewPointRegistrationScreen extends StatefulWidget {
   final NewPointRegistrationController controller;
@@ -73,6 +74,11 @@ class _NewPointRegistrationScreenState
       );
     }
 
-    return const SizedBox.shrink();
+    return SvgPicture.asset(
+      'assets/undraw_educator_re_ju47.svg',
+      semanticsLabel: 'Teacher',
+      width: 200,
+      height: 200,
+    );
   }
 }
