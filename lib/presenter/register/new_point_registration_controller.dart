@@ -1,32 +1,40 @@
 import 'package:auxilioprofessor/application/localization/geo_location_usecase.dart';
 import 'package:auxilioprofessor/application/user/get_logged_in_user_usecase.dart';
 import 'package:auxilioprofessor/application/point/save_new_point_usecase.dart';
+import 'package:auxilioprofessor/presenter/register/state/register_state.dart';
 import 'package:flutter/foundation.dart';
 
-enum RegistrationState { loading, success, error }
-
-class NewPointRegistrationController extends ValueNotifier<RegistrationState> {
+class NewPointRegistrationController {
   final SaveNewPointUsecase saveNewPointUseCase;
   final GetLoggedInUserUsecase getLoggedInUserUseCase;
   final GetLocationUsecase getLocationUsecase;
+
+  final ValueNotifier<NewPointState> _stateNotifier =
+      ValueNotifier(NewPointLoadingState());
 
   NewPointRegistrationController({
     required this.saveNewPointUseCase,
     required this.getLoggedInUserUseCase,
     required this.getLocationUsecase,
-  }) : super(RegistrationState.loading);
+  });
+
+  void _setState(NewPointState newState) {
+    _stateNotifier.value = newState;
+  }
+
+  ValueNotifier<NewPointState> get state => _stateNotifier;
 
   Future<void> registerNewPoint() async {
     try {
-      value = RegistrationState.loading;
+      _setState(NewPointLoadingState());
       final user = await getLoggedInUserUseCase.execute();
       final localization = await getLocationUsecase.execute();
-      final input = SaveNewPointInput(userId: user.uid, localization: localization);
+      final input =
+          SaveNewPointInput(userId: user.uid, localization: localization);
       await saveNewPointUseCase.execute(input);
-      value = RegistrationState.success;
+      _setState(NewPointSuccessState());
     } catch (e) {
-      value = RegistrationState.error;
-      rethrow;
+      _setState(NewPointErrorState(e as Exception));
     }
   }
 }

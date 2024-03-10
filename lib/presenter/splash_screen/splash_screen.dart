@@ -2,7 +2,7 @@ import 'package:auxilioprofessor/application/user/get_logged_in_user_usecase.dar
 import 'package:auxilioprofessor/domain/entities/user_entity.dart';
 import 'package:auxilioprofessor/presenter/splash_screen/splash_screen_controller.dart';
 import 'package:flutter/material.dart';
-
+// TODO: injetar o controller, não o usecase.
 class SplashScreen extends StatefulWidget {
   final GetLoggedInUserUsecase getLoggedInUserUsecase;
   const SplashScreen({super.key, required this.getLoggedInUserUsecase});

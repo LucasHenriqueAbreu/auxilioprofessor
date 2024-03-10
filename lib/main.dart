@@ -1,10 +1,10 @@
 import 'package:auxilioprofessor/application/user/get_logged_in_user_usecase.dart';
 import 'package:auxilioprofessor/infra/repositories/user_repository_memory.dart';
-import 'package:auxilioprofessor/presenter/home/home_screen_widget.dart';
-import 'package:auxilioprofessor/presenter/login/login_screen_widget.dart';
+import 'package:auxilioprofessor/presenter/home/home_screen.dart';
+import 'package:auxilioprofessor/presenter/login/login_screen.dart';
 import 'package:auxilioprofessor/presenter/profile/profile_screen_widget.dart';
-import 'package:auxilioprofessor/presenter/signin/signin_screen_widget.dart';
-import 'package:auxilioprofessor/presenter/splash_screen/splash_screen_widget.dart';
+import 'package:auxilioprofessor/presenter/signin/signin_screen.dart';
+import 'package:auxilioprofessor/presenter/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -35,10 +35,10 @@ class MyApp extends StatelessWidget {
                 userRepository: UserRepositoryMemory(),
               ),
             ),
-        '/login': (context) => LoginScreen(),
-        '/signin': (context) => SignInScreen(),
-        '/home': (context) => HomeScreen(),
-        '/profile': (context) => ProfileScreen(),
+        '/login': (context) => const LoginScreen(),
+        '/signin': (context) => const SignInScreen(),
+        '/home': (context) => const HomeScreen(),
+        '/profile': (context) => const ProfileScreen(),
       },
     );
   }

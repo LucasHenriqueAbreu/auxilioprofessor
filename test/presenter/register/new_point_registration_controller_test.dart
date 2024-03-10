@@ -4,6 +4,7 @@ import 'package:auxilioprofessor/application/user/get_logged_in_user_usecase.dar
 import 'package:auxilioprofessor/domain/entities/localization_entity.dart';
 import 'package:auxilioprofessor/domain/entities/user_entity.dart';
 import 'package:auxilioprofessor/presenter/register/new_point_registration_controller.dart';
+import 'package:auxilioprofessor/presenter/register/state/register_state.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -37,14 +38,10 @@ void main() {
     when(mockGetLoggedInUserUsecase.execute()).thenAnswer((_) async => user);
     when(mockGetLocationUsecase.execute())
         .thenAnswer((_) async => localization);
-
     when(mockSaveNewPointUsecase.execute(captureAny))
         .thenAnswer((_) async => Future<void>.value(null));
-
     await controller.registerNewPoint();
-
-    expect(controller.value, RegistrationState.success);
-
+    expect(controller.state.value, isA<NewPointSuccessState>());
     verify(mockGetLoggedInUserUsecase.execute()).called(1);
     verify(mockGetLocationUsecase.execute()).called(1);
     verify(mockSaveNewPointUsecase.execute(captureAny)).called(1);
@@ -52,11 +49,8 @@ void main() {
 
   test('registerNewPoint - Error', () async {
     when(mockGetLoggedInUserUsecase.execute()).thenThrow(Exception());
-
-    expect(controller.registerNewPoint(), throwsA(isA<Exception>()));
-
-    expect(controller.value, RegistrationState.error);
-
+    await controller.registerNewPoint();
+    expect(controller.state.value, isA<NewPointErrorState>());
     verify(mockGetLoggedInUserUsecase.execute()).called(1);
     verifyZeroInteractions(mockGetLocationUsecase);
     verifyZeroInteractions(mockSaveNewPointUsecase);

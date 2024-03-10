@@ -1,10 +1,10 @@
 import 'package:auxilioprofessor/application/point/save_new_point_usecase.dart';
 import 'package:auxilioprofessor/domain/entities/localization_entity.dart';
-import 'package:auxilioprofessor/domain/entities/point.dart';
 import 'package:auxilioprofessor/domain/repositories/point_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
+
 import 'save_new_point_usecase_test.mocks.dart';
 
 @GenerateMocks([PointRepository])
