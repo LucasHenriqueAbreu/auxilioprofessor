@@ -1,6 +1,7 @@
 import 'package:auxilioprofessor/application/localization/geo_location_usecase.dart';
 import 'package:auxilioprofessor/application/point/save_new_point_usecase.dart';
 import 'package:auxilioprofessor/application/user/get_logged_in_user_usecase.dart';
+import 'package:auxilioprofessor/core/base/errors/user_not_found_exception.dart';
 import 'package:auxilioprofessor/domain/entities/localization_entity.dart';
 import 'package:auxilioprofessor/domain/entities/user_entity.dart';
 import 'package:auxilioprofessor/presenter/register/new_point_registration_controller.dart';
@@ -48,7 +49,7 @@ void main() {
   });
 
   test('registerNewPoint - Error', () async {
-    when(mockGetLoggedInUserUsecase.execute()).thenThrow(Exception());
+    when(mockGetLoggedInUserUsecase.execute()).thenThrow(UserNotFoundException());
     await controller.registerNewPoint();
     expect(controller.state.value, isA<NewPointErrorState>());
     verify(mockGetLoggedInUserUsecase.execute()).called(1);
