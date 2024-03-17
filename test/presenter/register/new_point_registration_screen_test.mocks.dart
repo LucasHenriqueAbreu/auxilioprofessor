@@ -3,19 +3,21 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i8;
+import 'dart:async' as _i7;
 
 import 'package:auxilioprofessor/application/localization/geo_location_usecase.dart'
-    as _i4;
+    as _i9;
 import 'package:auxilioprofessor/application/point/save_new_point_usecase.dart'
-    as _i2;
-import 'package:auxilioprofessor/application/user/get_logged_in_user_usecase.dart'
-    as _i3;
-import 'package:auxilioprofessor/presenter/register/new_point_registration_controller.dart'
     as _i6;
-import 'package:auxilioprofessor/presenter/register/state/register_state.dart'
-    as _i7;
-import 'package:flutter/foundation.dart' as _i5;
+import 'package:auxilioprofessor/application/user/get_logged_in_user_usecase.dart'
+    as _i8;
+import 'package:auxilioprofessor/domain/entities/localization_entity.dart'
+    as _i5;
+import 'package:auxilioprofessor/domain/entities/user_entity.dart' as _i4;
+import 'package:auxilioprofessor/domain/repositories/point_repository.dart'
+    as _i2;
+import 'package:auxilioprofessor/domain/repositories/user_repository.dart'
+    as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -31,9 +33,9 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeSaveNewPointUsecase_0 extends _i1.SmartFake
-    implements _i2.SaveNewPointUsecase {
-  _FakeSaveNewPointUsecase_0(
+class _FakePointRepository_0 extends _i1.SmartFake
+    implements _i2.PointRepository {
+  _FakePointRepository_0(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -42,9 +44,9 @@ class _FakeSaveNewPointUsecase_0 extends _i1.SmartFake
         );
 }
 
-class _FakeGetLoggedInUserUsecase_1 extends _i1.SmartFake
-    implements _i3.GetLoggedInUserUsecase {
-  _FakeGetLoggedInUserUsecase_1(
+class _FakeUserRepository_1 extends _i1.SmartFake
+    implements _i3.UserRepository {
+  _FakeUserRepository_1(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -53,9 +55,8 @@ class _FakeGetLoggedInUserUsecase_1 extends _i1.SmartFake
         );
 }
 
-class _FakeGetLocationUsecase_2 extends _i1.SmartFake
-    implements _i4.GetLocationUsecase {
-  _FakeGetLocationUsecase_2(
+class _FakeUser_2 extends _i1.SmartFake implements _i4.User {
+  _FakeUser_2(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -64,9 +65,8 @@ class _FakeGetLocationUsecase_2 extends _i1.SmartFake
         );
 }
 
-class _FakeValueNotifier_3<T> extends _i1.SmartFake
-    implements _i5.ValueNotifier<T> {
-  _FakeValueNotifier_3(
+class _FakeLocalization_3 extends _i1.SmartFake implements _i5.Localization {
+  _FakeLocalization_3(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -75,58 +75,90 @@ class _FakeValueNotifier_3<T> extends _i1.SmartFake
         );
 }
 
-/// A class which mocks [NewPointRegistrationController].
+/// A class which mocks [SaveNewPointUsecase].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockNewPointRegistrationController extends _i1.Mock
-    implements _i6.NewPointRegistrationController {
-  MockNewPointRegistrationController() {
+class MockSaveNewPointUsecase extends _i1.Mock
+    implements _i6.SaveNewPointUsecase {
+  MockSaveNewPointUsecase() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i2.SaveNewPointUsecase get saveNewPointUseCase => (super.noSuchMethod(
-        Invocation.getter(#saveNewPointUseCase),
-        returnValue: _FakeSaveNewPointUsecase_0(
+  _i2.PointRepository get pointRepository => (super.noSuchMethod(
+        Invocation.getter(#pointRepository),
+        returnValue: _FakePointRepository_0(
           this,
-          Invocation.getter(#saveNewPointUseCase),
+          Invocation.getter(#pointRepository),
         ),
-      ) as _i2.SaveNewPointUsecase);
+      ) as _i2.PointRepository);
 
   @override
-  _i3.GetLoggedInUserUsecase get getLoggedInUserUseCase => (super.noSuchMethod(
-        Invocation.getter(#getLoggedInUserUseCase),
-        returnValue: _FakeGetLoggedInUserUsecase_1(
-          this,
-          Invocation.getter(#getLoggedInUserUseCase),
-        ),
-      ) as _i3.GetLoggedInUserUsecase);
-
-  @override
-  _i4.GetLocationUsecase get getLocationUsecase => (super.noSuchMethod(
-        Invocation.getter(#getLocationUsecase),
-        returnValue: _FakeGetLocationUsecase_2(
-          this,
-          Invocation.getter(#getLocationUsecase),
-        ),
-      ) as _i4.GetLocationUsecase);
-
-  @override
-  _i5.ValueNotifier<_i7.NewPointState> get state => (super.noSuchMethod(
-        Invocation.getter(#state),
-        returnValue: _FakeValueNotifier_3<_i7.NewPointState>(
-          this,
-          Invocation.getter(#state),
-        ),
-      ) as _i5.ValueNotifier<_i7.NewPointState>);
-
-  @override
-  _i8.Future<void> registerNewPoint() => (super.noSuchMethod(
+  _i7.Future<void> execute(_i6.SaveNewPointInput? input) => (super.noSuchMethod(
         Invocation.method(
-          #registerNewPoint,
+          #execute,
+          [input],
+        ),
+        returnValue: _i7.Future<void>.value(),
+        returnValueForMissingStub: _i7.Future<void>.value(),
+      ) as _i7.Future<void>);
+}
+
+/// A class which mocks [GetLoggedInUserUsecase].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockGetLoggedInUserUsecase extends _i1.Mock
+    implements _i8.GetLoggedInUserUsecase {
+  MockGetLoggedInUserUsecase() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i3.UserRepository get userRepository => (super.noSuchMethod(
+        Invocation.getter(#userRepository),
+        returnValue: _FakeUserRepository_1(
+          this,
+          Invocation.getter(#userRepository),
+        ),
+      ) as _i3.UserRepository);
+
+  @override
+  _i7.Future<_i4.User> execute() => (super.noSuchMethod(
+        Invocation.method(
+          #execute,
           [],
         ),
-        returnValue: _i8.Future<void>.value(),
-        returnValueForMissingStub: _i8.Future<void>.value(),
-      ) as _i8.Future<void>);
+        returnValue: _i7.Future<_i4.User>.value(_FakeUser_2(
+          this,
+          Invocation.method(
+            #execute,
+            [],
+          ),
+        )),
+      ) as _i7.Future<_i4.User>);
+}
+
+/// A class which mocks [GetLocationUsecase].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockGetLocationUsecase extends _i1.Mock
+    implements _i9.GetLocationUsecase {
+  MockGetLocationUsecase() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i7.Future<_i5.Localization> execute() => (super.noSuchMethod(
+        Invocation.method(
+          #execute,
+          [],
+        ),
+        returnValue: _i7.Future<_i5.Localization>.value(_FakeLocalization_3(
+          this,
+          Invocation.method(
+            #execute,
+            [],
+          ),
+        )),
+      ) as _i7.Future<_i5.Localization>);
 }

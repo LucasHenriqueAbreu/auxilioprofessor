@@ -1,8 +1,6 @@
 import 'package:auxilioprofessor/application/localization/geo_location_usecase.dart';
 import 'package:auxilioprofessor/application/point/save_new_point_usecase.dart';
 import 'package:auxilioprofessor/application/user/get_logged_in_user_usecase.dart';
-import 'package:auxilioprofessor/domain/repositories/point_repository.dart';
-import 'package:auxilioprofessor/domain/repositories/user_repository.dart';
 import 'package:auxilioprofessor/infra/repositories/point_repository_memory.dart';
 import 'package:auxilioprofessor/infra/repositories/user_repository_memory.dart';
 import 'package:auxilioprofessor/presenter/register/new_point_registration_controller.dart';

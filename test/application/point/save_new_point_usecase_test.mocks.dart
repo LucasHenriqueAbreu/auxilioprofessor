@@ -49,4 +49,13 @@ class MockPointRepository extends _i1.Mock implements _i2.PointRepository {
         ),
         returnValue: _i3.Future<int>.value(0),
       ) as _i3.Future<int>);
+
+  @override
+  _i3.Stream<List<_i4.Point>> getPoints() => (super.noSuchMethod(
+        Invocation.method(
+          #getPoints,
+          [],
+        ),
+        returnValue: _i3.Stream<List<_i4.Point>>.empty(),
+      ) as _i3.Stream<List<_i4.Point>>);
 }
